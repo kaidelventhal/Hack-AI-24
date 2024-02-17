@@ -1,22 +1,22 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+/main-track/node_modules
+/main-track/.pnp
+/main-track/.pnp.js
 .vs/
 # testing
 /coverage
 
 # production
-/build
+/main-track/build
 
 # misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+/main-track/.DS_Store
+/main-track/.env.local
+/main-track/.env.development.local
+/main-track/.env.test.local
+/main-track/.env.production.local
 
 npm-debug.log*
 yarn-debug.log*

@@ -7,22 +7,30 @@ from sklearn import preprocessing, svm
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
-
 df = pd.read_csv("HousingDataset.csv")
-df_binary = df[['price', 'area']]
-df_binary.columns = ['price', 'area']
-df_binary.head()
 
-X = np.array(df_binary['price']).reshape(-1, 1)
-y = np.array(df_binary['area']).reshape(-1, 1)
+fit = numpy.array()
+score = numpy.array()
+headers = ["price", "area", "bedrooms", "bathrooms", "stories", "mainroad", "guestroom", "basement", "hotwaterheating", "airconditioning", "parking", "prefarea", "furnishingstatus"]
 
-df_binary.dropna(inplace = True)
+i = 1
+for i in range(14): 
+  df_binary = df[['price', headers[i]]]
+  df_binary.columns = ['price', headers[i]]
+  df_binary.head()
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
+  X = np.array(df_binary['price']).reshape(-1, 1)
+  y = np.array(df_binary[headers[i]]).reshape(-1, 1)
 
-regr = LinearRegression()
+  df_binary.dropna(inplace = True)
 
-regr.fit(X_train, y_train)
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 
-print("This is the linreg score")
-print(regr.score(X_test, y_test))
+  regr = LinearRegression()
+
+  fit = regr.fit(X_train, y_train)
+  score[i-1] = regr.score(X_test, y_test)
+
+print("This is the linreg fits")
+print(fit)
+print("This is the linreg scores")
