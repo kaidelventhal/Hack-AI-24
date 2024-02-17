@@ -6,21 +6,34 @@ import pandas as pd
 # Create random input and output data
 x = np.linspace(-math.pi, math.pi, 2000)
 y = np.sin(x)
-mydata = pd.read_csv("HousingDataset.csv")
+np.dataset= pd.read_csv("HousingDataset.csv")
+data = np.dataset.to_numpy()
+weights = [];
 
-print(mydata)
-mydata
+i =0
+for i in range(12):
+    weights.append(np.random.randn())
+
+print(weights)
 # Randomly initialize weights
 a = np.random.randn()
 b = np.random.randn()
 c = np.random.randn()
 d = np.random.randn()
 
+
+
+
+
+
 learning_rate = 1e-6
-for t in range(len(mydata)):
+t = 1
+for t in range(len(data)):
     # Forward pass: compute predicted y
     # y = a + b x + c x^2 + d x^3
-    y_pred = a + b * x + c * x ** 2 + d * x ** 3
+    #y_pred = a + b * x + c * x ** 2 + d * x ** 3
+    #print out each row
+    print(data[t])
 
     # Compute and print loss
     loss = np.square(y_pred - y).sum()
