@@ -15,6 +15,14 @@ a = np.random.randn()
 b = np.random.randn()
 c = np.random.randn()
 d = np.random.randn()
+e = np.random.randn()
+f = np.random.randn()
+g = np.random.randn()
+h = np.random.randn()
+i = np.random.randn()
+j = np.random.randn()
+k = np.random.randn()
+l = np.random.randn()
 
 learning_rate = 1e-6
 for t in range(len(mydata)):
