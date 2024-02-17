@@ -34,6 +34,12 @@ for t in range(len(data)):
     #y_pred = a + b * x + c * x ** 2 + d * x ** 3
     #print out each row
     print(data[t])
+    j=2
+    ypred = 0;
+    for j in range 13:
+        if j>=2 and j<=5 or j==11:
+            ypred = ypred + weights[j-2]*data[t][j]
+        else if J>=6 and j
 
     # Compute and print loss
     loss = np.square(y_pred - y).sum()
